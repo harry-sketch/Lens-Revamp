@@ -1,12 +1,30 @@
 "use client";
 
-// Components
-import Navbox from "./Navbox/Navbox";
-import BasicInput from "@/components/common/BasicInput";
 import { useState } from "react";
+
+// Components
+import ChatTab from "./ChatTab/ChatTab";
+import Navbox from "./Navbox/Navbox";
+import Tabs from "@/components/common/Tabs";
+import BasicInput from "@/components/common/BasicInput";
+
+// Assets
+import BasicIcons from "@/Assets/BasicIcons";
 
 const Sidebar = () => {
   const [searchHandle, setSearchHandle] = useState<string>("");
+
+  const [activeTab, setActiveTab] = useState<number>(1);
+
+  const tabsHeader = ["Chat", "Huddle", "Followers"];
+
+  const TabsData: {
+    [key: number]: JSX.Element;
+  } = {
+    1: <ChatTab />,
+    2: <div>huddle</div>,
+    3: <div>followers</div>,
+  };
 
   return (
     <aside className="w-[400px] h-full">
@@ -19,16 +37,18 @@ const Sidebar = () => {
         />
       </div>
 
-      <div className="h-[6%]">
-        <span>chat</span>
-        <span>huddle</span>
-        <span>follow</span>
+      <div className="h-[6%] flex items-end justify-between border-b-2 border-rgbColors-3 px-8 gap-8">
+        <Tabs
+          className="justify-center"
+          tabsHeader={tabsHeader}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        <div className="cursor-pointer pb-1.5">{BasicIcons.add}</div>
       </div>
 
-      <div className="overflow-y-auto text-white border h-[77%]">
-        {Array.from({ length: 100 }).map((_, i) => (
-          <div>{1}</div>
-        ))}
+      <div className="overflow-y-auto  h-[77%]  pt-4 px-8 overflow-x-hidden">
+        {activeTab ? TabsData[activeTab] : null}
       </div>
     </aside>
   );

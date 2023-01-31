@@ -16,6 +16,7 @@ module.exports = {
           lens01: "#00501E",
           lens02: "#ABFD2C",
           lens03: "#ABD396",
+          lens04: "#E5FFBE",
         },
         btn: {
           primary: "#E5FFBE",
