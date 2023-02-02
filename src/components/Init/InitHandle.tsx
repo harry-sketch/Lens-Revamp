@@ -1,8 +1,11 @@
 "use client";
 
+import { useCallback } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+
 // Common
 import BasicBtn from "../common/BasicBtn";
-import { toast } from "react-hot-toast";
 
 // types
 import { IInitHandleState } from "@/types/landing.types";
@@ -11,7 +14,6 @@ import useClientStore from "@/clientStore";
 // Overlay
 import Overlay from "../common/Overlay";
 import Modal from "../common/Modal";
-import { useRouter } from "next/navigation";
 
 const InitHandle = () => {
   const router = useRouter();
@@ -48,7 +50,7 @@ const InitHandle = () => {
   ];
 
   // Funs
-  const handleOnClose = () => setActiveModal("close");
+  const handleOnClose = () => useCallback(() => setActiveModal("close"), []);
 
   return (
     <>

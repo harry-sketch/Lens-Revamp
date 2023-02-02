@@ -17,6 +17,7 @@ module.exports = {
           lens02: "#ABFD2C",
           lens03: "#ABD396",
           lens04: "#E5FFBE",
+          lens05: "#20703E",
         },
         btn: {
           primary: "#E5FFBE",
@@ -26,6 +27,9 @@ module.exports = {
           1: "rgba(18, 18, 20, 0.8)",
           2: "rgba(171, 253, 44, 0.1)",
           3: "rgba(171, 211, 150, 0.2)",
+          4: "rgba(0, 80, 30, 0.5)",
+          5: "rgba(171, 211, 150, 0.3)",
+          6: "rgba(0, 80, 30, 0.8)",
         },
       },
     },

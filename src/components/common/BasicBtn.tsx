@@ -7,11 +7,7 @@ import { Spline_Sans } from "@next/font/google";
 
 // Assets
 import LandingPageIcons from "@/Assets/LandingPageIcons";
-
-const spline = Spline_Sans({
-  weight: "600",
-  subsets: ["latin"],
-});
+import { cw } from "@/utils/helpers";
 
 interface Props {
   text: string;
@@ -42,13 +38,12 @@ const BasicBtn: React.FC<Props> = ({
       type="button"
       disabled={disabled}
       onClick={handleClick}
-      className={`rounded-lg py-2 cursor-pointer w-full text-base flex items-center justify-center gap-2 ${
-        spline.className
-      } ${className} ${
+      className={cw(
+        "rounded-lg py-2 cursor-pointer w-full text-base flex items-center justify-center gap-2",
         variant === "primary"
           ? "bg-btn-primary border-transparent text-custom-lens01"
-          : " bg-transparent border border-btn-primary text-btn-primary"
-      }`}
+          : "bg-transparent border border-btn-primary text-btn-primary"
+      )}
     >
       {text}
       {isIcon ? <span>{LandingPageIcons[type ? type : ""]}</span> : null}

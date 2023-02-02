@@ -1,3 +1,4 @@
+// Components
 import ChatArea from "@/components/Conference/ChatArea/ChatArea";
 import Sidebar from "@/components/Conference/Sidebar/Sidebar";
 

@@ -1,9 +1,13 @@
 import { Spline_Sans } from "@next/font/google";
+
 // Styles
 import "./globals.css";
 
 // Toast
 import Toast from "@/components/common/Toast";
+
+// Utils
+import { cw } from "@/utils/helpers";
 
 const spline = Spline_Sans({
   subsets: ["latin"],
@@ -20,7 +24,7 @@ export default function RootLayout({
       <head />
 
       <body
-        className={`bg-custom-lens01 w-full min-h-screen ${spline.className}`}
+        className={cw("bg-custom-lens01 w-full min-h-screen", spline.className)}
       >
         <Toast />
         {children}

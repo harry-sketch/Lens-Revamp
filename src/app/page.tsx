@@ -1,15 +1,10 @@
 import Image from "next/image";
-import { Spline_Sans } from "@next/font/google";
 
 // Components
 import InitImage from "@/components/Init/InitImage";
 import InitHandle from "@/components/Init/InitHandle";
 import Navbar from "@/components/Navbar/Navbar";
-
-const spline = Spline_Sans({
-  subsets: ["latin"],
-  weight: "400",
-});
+import FooterTxt from "@/components/common/FooterTxt";
 
 export default function Home() {
   return (
@@ -28,11 +23,7 @@ export default function Home() {
 
       <InitHandle />
 
-      <div
-        className={`${spline.className} text-custom-1 text-base absolute bottom-4`}
-      >
-        Powered by Huddle01
-      </div>
+      <FooterTxt className="text-custom-1" />
     </main>
   );
 }

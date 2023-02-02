@@ -17,7 +17,7 @@ const HandleStrp: React.FC<Props> = ({
   timestamp,
   unreadCnt,
 }) => (
-  <div className="flex items-center justify-between">
+  <div className="flex items-center justify-between cursor-pointer">
     <div className="flex items-center gap-4">
       <Image
         src="/images/SidebarAvatar.png"

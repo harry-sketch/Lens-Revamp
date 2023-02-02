@@ -2,6 +2,7 @@ import React from "react";
 
 // UI Primitive
 import * as RadixTabs from "@radix-ui/react-tabs";
+import { cw } from "@/utils/helpers";
 
 interface Props {
   activeTab: number;
@@ -20,7 +21,7 @@ const Tabs: React.FC<Props> = ({
     defaultValue={`tab-${activeTab.toString()}`}
     className="w-full"
   >
-    <RadixTabs.TabsList className={`flex items-center  gap-10 ${className}`}>
+    <RadixTabs.TabsList className={cw("flex items-center  gap-10", className)}>
       {tabsHeader.map((tab, i) => {
         if (tab) {
           return (
@@ -28,11 +29,12 @@ const Tabs: React.FC<Props> = ({
               value={`tab-${i + 1}`}
               key={`tabs-toggle-${i + 1}`}
               onClick={() => setActiveTab(i + 1)}
-              className={`transition-all duration-300 ease-out pb-1.5 font-medium text-base ${
+              className={cw(
+                "transition-all duration-300 ease-out pb-1.5 font-medium text-base",
                 activeTab === i + 1
                   ? "border-b-2 text-custom-lens04"
                   : "border-transparent text-custom-lens03 border-b-2"
-              }`}
+              )}
             >
               {tab}
             </RadixTabs.TabsTrigger>

@@ -29,6 +29,7 @@ const Sidebar = () => {
   return (
     <aside className="w-[400px] h-full">
       <Navbox />
+
       <div className="px-8 flex items-center justify-center h-[10%]">
         <BasicInput
           icon="search"
