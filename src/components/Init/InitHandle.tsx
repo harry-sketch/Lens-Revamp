@@ -54,7 +54,7 @@ const InitHandle = () => {
 
   return (
     <>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 w-1/3">
         {IniTHandleData.map(({ text, url, variant }) => (
           <BasicBtn
             key={`init-btn-${text}`}

@@ -26,18 +26,16 @@ const Dropdown: React.FC<Props> = ({
   <DropdownMenu.Root open={open} onOpenChange={onOpenChange}>
     <DropdownMenu.Trigger>{trigger}</DropdownMenu.Trigger>
 
-    <DropdownMenu.Portal>
-      <DropdownMenu.Content
-        className={cw(
-          "backdrop-blur-md shadow-md rounded-lg border border-custom-lens05 bg-rgbColors-4/60 w-full",
-          className
-        )}
-        sideOffset={sideOffset}
-        align={align}
-      >
-        {children}
-      </DropdownMenu.Content>
-    </DropdownMenu.Portal>
+    <DropdownMenu.Content
+      className={cw(
+        "backdrop-blur-md shadow-md rounded-lg border border-custom-lens05 bg-rgbColors-4/60 w-full z-0",
+        className
+      )}
+      sideOffset={sideOffset}
+      align={align}
+    >
+      {children}
+    </DropdownMenu.Content>
   </DropdownMenu.Root>
 );
 

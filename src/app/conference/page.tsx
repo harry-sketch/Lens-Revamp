@@ -1,11 +1,9 @@
 // Components
-import ChatArea from "@/components/Conference/ChatArea/ChatArea";
-import Sidebar from "@/components/Conference/Sidebar/Sidebar";
+import Showcase from "@/components/Conference/Showcase/Showcase";
 
 const Conference = () => (
   <main className="w-full h-screen flex">
-    <Sidebar />
-    <ChatArea />
+    <Showcase />
   </main>
 );
 

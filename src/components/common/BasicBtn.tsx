@@ -39,6 +39,7 @@ const BasicBtn: React.FC<Props> = ({
       disabled={disabled}
       onClick={handleClick}
       className={cw(
+        className,
         "rounded-lg py-2 cursor-pointer w-full text-base flex items-center justify-center gap-2",
         variant === "primary"
           ? "bg-btn-primary border-transparent text-custom-lens01"
