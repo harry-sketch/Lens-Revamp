@@ -3,6 +3,8 @@
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { Web3Provider } from "@ethersproject/providers";
+import detectEthereumProvider from "@metamask/detect-provider";
 
 // Common
 import BasicBtn from "../common/BasicBtn";
@@ -14,6 +16,9 @@ import useLensStore from "@/clientStore";
 // Overlay
 import Overlay from "../common/Overlay";
 import Modal from "../common/Modal";
+import { useMutation } from "@tanstack/react-query";
+import { divergent } from "@/clientConfig/clientConfig";
+import { Provider } from "@ethersproject/providers";
 
 const InitHandle = () => {
   const router = useRouter();
@@ -28,19 +33,7 @@ const InitHandle = () => {
     {
       text: "Sign in with Lens",
       variant: "primary",
-      url: async () => {
-        try {
-          setActiveModal("sigIn");
-          setTimeout(() => {
-            router.push("/conference");
-          }, 2000);
-        } catch (err) {
-          console.log(err);
-          toast.error(
-            "There was a problem in signing in with your wallet, please try again."
-          );
-        }
-      },
+      url: () => handleSignIn.mutate(),
     },
     {
       text: "Claim Lens Handle",
@@ -51,6 +44,27 @@ const InitHandle = () => {
 
   // Funs
   const handleOnClose = () => useCallback(() => setActiveModal("close"), []);
+
+  const handleSignIn = useMutation({
+    mutationFn: async () => {
+      await divergent.init("lens");
+      const _provider = await detectEthereumProvider();
+
+      if (!_provider) {
+        console.log("error");
+        return;
+      }
+
+      const provider = new Web3Provider(_provider);
+
+      const address = await provider.send("eth_requestAccounts", []);
+      console.log({ address });
+    },
+    onError: (err) => {
+      console.log(err);
+      toast.error("Error in singing in");
+    },
+  });
 
   return (
     <>

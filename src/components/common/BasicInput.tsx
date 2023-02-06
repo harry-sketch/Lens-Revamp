@@ -5,6 +5,9 @@ import React, { ChangeEvent } from "react";
 // Assets
 import BasicIcons from "@/Assets/BasicIcons";
 
+// Utils
+import { cw } from "@/utils/helpers";
+
 interface Props {
   icon?: string;
   value: string;
@@ -29,7 +32,10 @@ const BasicInput: React.FC<Props> = ({
 
   return (
     <div
-      className={`bg-rgbColors-3 w-full flex items-center py-2.5 px-3.5 rounded-lg shadow-md backdrop-blur-md ${className}`}
+      className={cw(
+        "bg-rgbColors-3 w-full flex items-center py-2.5 px-3.5 rounded-lg shadow-md backdrop-blur-md",
+        className
+      )}
     >
       {icon ? BasicIcons[icon] : null}
       <input
@@ -37,9 +43,10 @@ const BasicInput: React.FC<Props> = ({
         value={value}
         placeholder={placeholder}
         onChange={(e) => handleChange(e)}
-        className={`bg-transparent w-full focus:outline-none border-none placeholder:text-custom-lens03  text-sm font-normal ${
+        className={cw(
+          "bg-transparent w-full focus:outline-none border-none placeholder:text-custom-lens03  text-sm font-normal",
           inputClass ? inputClass : "text-custom-lens03"
-        }`}
+        )}
       />
     </div>
   );
