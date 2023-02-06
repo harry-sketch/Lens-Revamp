@@ -5,7 +5,7 @@ import StartConvo from "./StartConvo/StartConvo";
 const ChatArea = () => {
   return (
     <section className="flex-1  bg-custom-lens03 h-full">
-      {false ? <StartConvo /> : <EmptyMsg />}
+      {true ? <StartConvo /> : <EmptyMsg />}
     </section>
   );
 };

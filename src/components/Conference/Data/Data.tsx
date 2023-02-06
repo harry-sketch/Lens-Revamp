@@ -12,7 +12,7 @@ export const GroupChatInitSteps: {
   error: <UploadPhoto />,
   reUploadPhoto: <UploadPhoto />,
   groupInfo: <div>init</div>,
-  managePeers: <div>init</div>,
+  managePeers: <div>managePeers</div>,
   leave: <div>init</div>,
   exit: <div>init</div>,
 };
@@ -26,7 +26,7 @@ export const titlesMsg: {
   exit: "",
   groupInfo: "",
   leave: "",
-  managePeers: "",
+  managePeers: "Manage participants",
   reUploadPhoto: "Create new group",
   uploadPhoto: "Create new group",
 };

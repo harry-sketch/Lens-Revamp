@@ -28,7 +28,7 @@ const Dropdown: React.FC<Props> = ({
 
     <DropdownMenu.Content
       className={cw(
-        "backdrop-blur-md shadow-md rounded-lg border border-custom-lens05 bg-rgbColors-4/60 w-full z-0",
+        "backdrop-blur-md shadow-md rounded-lg border border-custom-lens05 bg-rgbColors-4/60 w-full z-10",
         className
       )}
       sideOffset={sideOffset}

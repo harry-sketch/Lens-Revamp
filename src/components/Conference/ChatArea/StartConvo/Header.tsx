@@ -3,6 +3,10 @@ import Image from "next/image";
 // Assets
 import BasicIcons from "@/Assets/BasicIcons";
 
+// Components
+import Dropdown from "@/components/common/Dropdown";
+import GroupMoreOpt from "@/components/Group/GroupMoreOpt/GroupMoreOpt";
+
 const Header = () => (
   <div className="bg-custom-lens01 w-full h-[7.2%] flex items-center justify-between px-6 py-2.5">
     <div className="flex items-center gap-4">
@@ -17,7 +21,7 @@ const Header = () => (
         Benedita.lens
       </div>
     </div>
-    <div className="flex items-center gap-4 cursor-pointer">
+    <div className="flex items-center  gap-4 cursor-pointer">
       <button
         type="button"
         className="bg-rgbColors-5 rounded-lg flex items-center gap-2.5 backdrop-blur-md py-1.5 w-40  justify-center text-custom-lens04 text-sm font-semibold cursor-pointer"
@@ -26,7 +30,18 @@ const Header = () => (
         Start Huddle
       </button>
       <button type="button">{BasicIcons.search}</button>
-      <button type="button">{BasicIcons.opt}</button>
+      <Dropdown
+        className="z-10"
+        align="end"
+        trigger={
+          <button type="button" className="mt-2">
+            {BasicIcons.opt}
+          </button>
+        }
+        sideOffset={5}
+      >
+        <GroupMoreOpt />
+      </Dropdown>
     </div>
   </div>
 );
