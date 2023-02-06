@@ -11,6 +11,7 @@ interface Props {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   placeholder?: string;
+  inputClass?: string;
 }
 
 const BasicInput: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const BasicInput: React.FC<Props> = ({
   onChange,
   className,
   placeholder,
+  inputClass,
 }) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (onChange) onChange(e);
@@ -35,7 +37,9 @@ const BasicInput: React.FC<Props> = ({
         value={value}
         placeholder={placeholder}
         onChange={(e) => handleChange(e)}
-        className="bg-transparent w-full focus:outline-none border-none placeholder:text-custom-lens03 text-custom-lens03 text-sm font-normal"
+        className={`bg-transparent w-full focus:outline-none border-none placeholder:text-custom-lens03  text-sm font-normal ${
+          inputClass ? inputClass : "text-custom-lens03"
+        }`}
       />
     </div>
   );

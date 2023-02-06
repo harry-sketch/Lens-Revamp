@@ -1,6 +1,5 @@
-import { TStepType } from "@/clientStore/clientTypes/group.client.type";
-
 // Components
+import { TStepType } from "@/clientStore/clientTypes/group.client.type";
 import CreateNewGrp from "@/components/Group/CreateNewGrp/CreateNewGrp";
 import UploadPhoto from "@/components/Group/UploadPhoto/UploadPhoto";
 
@@ -10,10 +9,10 @@ export const GroupChatInitSteps: {
   "": null,
   init: <CreateNewGrp />,
   uploadPhoto: <UploadPhoto />,
-  reUploadPhoto: <div>init</div>,
+  error: <UploadPhoto />,
+  reUploadPhoto: <UploadPhoto />,
   groupInfo: <div>init</div>,
   managePeers: <div>init</div>,
-  error: <div>init</div>,
   leave: <div>init</div>,
   exit: <div>init</div>,
 };
@@ -21,9 +20,9 @@ export const GroupChatInitSteps: {
 export const titlesMsg: {
   [key in TStepType]: string;
 } = {
-  init: "Create new group",
-  error: "",
   "": "",
+  init: "Create new group",
+  error: "Create new group",
   exit: "",
   groupInfo: "",
   leave: "",
