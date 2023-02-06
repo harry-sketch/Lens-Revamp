@@ -1,4 +1,4 @@
-export type TActiveModal = "close" | "sigIn" | "success";
+export type TActiveModal = "close" | "sigIn";
 
 export interface IModalState {
   activeModal: TActiveModal;

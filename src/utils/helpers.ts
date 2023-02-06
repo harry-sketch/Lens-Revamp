@@ -8,3 +8,7 @@ export const sliceMsg = (msg: string) => {
 export const cw = (...input: ClassValue[]) => {
   return twMerge(clsx(input));
 };
+
+export const sliceAdd = (add: string) => {
+  return `${add.slice(0, 5)}....${add.slice(add.length - 5)}`;
+};

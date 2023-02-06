@@ -20,8 +20,8 @@ export type TSidebarHandlesType = {
 export interface IGroupChatstate {
   steps: TStepType;
   handleId: number;
-  selectedGroupPeers: TSidebarHandlesType[];
-  setSelectedGroupPeers: (peer: TSidebarHandlesType) => void;
+  // selectedGroupPeers: TSidebarHandlesType[];
+  // setSelectedGroupPeers: (peer: TSidebarHandlesType) => void;
   setHandleId: (handleId: number) => void;
   sidebarHandlesArr: TSidebarHandlesType[];
   setSteps: (step: TStepType) => void;

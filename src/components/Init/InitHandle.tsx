@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-import { Web3Provider } from "@ethersproject/providers";
 import detectEthereumProvider from "@metamask/detect-provider";
+import { useMutation } from "@tanstack/react-query";
+import { divergent } from "@/clientConfig/clientConfig";
+import { Web3Provider } from "@ethersproject/providers";
 
 // Common
 import BasicBtn from "../common/BasicBtn";
@@ -16,16 +18,15 @@ import useLensStore from "@/clientStore";
 // Overlay
 import Overlay from "../common/Overlay";
 import Modal from "../common/Modal";
-import { useMutation } from "@tanstack/react-query";
-import { divergent } from "@/clientConfig/clientConfig";
-import { Provider } from "@ethersproject/providers";
 
 const InitHandle = () => {
   const router = useRouter();
 
-  const isSignedIn = true;
+  const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
 
   const activeModal = useLensStore((state) => state.activeModal);
+
+  const setAddress = useLensStore((state) => state.setAddress);
 
   const setActiveModal = useLensStore((state) => state.setActiveModal);
 
@@ -43,22 +44,36 @@ const InitHandle = () => {
   ];
 
   // Funs
-  const handleOnClose = () => useCallback(() => setActiveModal("close"), []);
+  const handleOnClose = () => setActiveModal("close");
 
   const handleSignIn = useMutation({
     mutationFn: async () => {
-      await divergent.init("lens");
-      const _provider = await detectEthereumProvider();
+      setActiveModal("sigIn");
 
-      if (!_provider) {
-        console.log("error");
-        return;
+      try {
+        const initResp = await divergent.init("lens");
+        console.log({ initResp });
+
+        const _provider = await detectEthereumProvider();
+
+        setIsSignedIn(true);
+
+        if (!_provider) {
+          toast.error("cound not found the evm");
+          return;
+        }
+
+        const provider = new Web3Provider(_provider);
+
+        const address = await provider.send("eth_requestAccounts", []);
+
+        setAddress(address[0]);
+
+        setActiveModal("close");
+        router.push("/conference");
+      } catch (err) {
+        console.log({ err });
       }
-
-      const provider = new Web3Provider(_provider);
-
-      const address = await provider.send("eth_requestAccounts", []);
-      console.log({ address });
     },
     onError: (err) => {
       console.log(err);

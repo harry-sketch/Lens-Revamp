@@ -2,8 +2,12 @@ import Image from "next/image";
 
 // Assets
 import BasicIcons from "@/Assets/BasicIcons";
+import useLensStore from "@/clientStore";
+import { sliceAdd } from "@/utils/helpers";
 
 const ProfileModal = () => {
+  const address = useLensStore((state) => state.peer.address);
+
   const ModalData = [
     { title: "View profile", url: "" },
     { title: "Settings", url: "" },
@@ -30,9 +34,14 @@ const ProfileModal = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="text-custom-lens03 text-sm font-normal">
-              0xF5s8...fu5xy8c
+              {sliceAdd(address)}
             </div>
-            <div role="presentation">{BasicIcons.copy}</div>
+            <button
+              type="button"
+              onClick={() => navigator.clipboard.writeText(address)}
+            >
+              {BasicIcons.copy}
+            </button>
           </div>
         </div>
       </div>
