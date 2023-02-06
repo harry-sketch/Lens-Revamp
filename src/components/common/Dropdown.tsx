@@ -34,7 +34,7 @@ const Dropdown: React.FC<Props> = ({
       sideOffset={sideOffset}
       align={align}
     >
-      {children}
+      <DropdownMenu.Item>{children}</DropdownMenu.Item>
     </DropdownMenu.Content>
   </DropdownMenu.Root>
 );

@@ -7,7 +7,7 @@ interface Props {
 
 const Overlay: React.FC<Props> = ({ children, onClick }) => (
   <div
-    className="bg-rgbColors-1 fixed inset-0 w-full h-full grid place-items-center z-10"
+    className="bg-rgbColors-1 fixed inset-0 w-full h-full grid place-items-center z-50"
     role="presentation"
     onClick={onClick}
   >

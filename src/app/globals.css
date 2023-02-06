@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .scrollBoxDark::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    height: 2px;
+    background-color: rgba(168, 200, 240, 0.9);
+  }
+
+  .lensScroll::-webkit-scrollbar {
+    border-radius: 4rem;
+    height: 5px;
+    width: 8px;
+    background-color: rgba(171, 211, 150, 0.4);
+  }
+}
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}

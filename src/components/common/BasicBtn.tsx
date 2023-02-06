@@ -12,7 +12,7 @@ import { cw } from "@/utils/helpers";
 interface Props {
   text: string;
   className?: string;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "custom";
   disabled?: boolean;
   onClick: () => void;
   isIcon?: boolean;
@@ -33,17 +33,20 @@ const BasicBtn: React.FC<Props> = ({
     return null;
   };
 
+  const variants = {
+    primary: "bg-btn-primary border-transparent text-custom-lens01",
+    secondary: "bg-transparent border border-btn-primary text-btn-primary",
+    custom: className,
+  };
+
   return (
     <button
       type="button"
       disabled={disabled}
       onClick={handleClick}
       className={cw(
-        className,
-        "rounded-lg py-2 cursor-pointer w-full text-base flex items-center justify-center gap-2",
-        variant === "primary"
-          ? "bg-btn-primary border-transparent text-custom-lens01"
-          : "bg-transparent border border-btn-primary text-btn-primary"
+        variants[variant],
+        "rounded-lg py-2 cursor-pointer w-full text-base flex items-center justify-center gap-2  font-semibold"
       )}
     >
       {text}

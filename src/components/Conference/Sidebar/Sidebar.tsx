@@ -61,7 +61,7 @@ const Sidebar = () => {
         </Dropdown>
       </div>
 
-      <div className="overflow-y-auto  h-[77%]  pt-4 px-8 overflow-x-hidden">
+      <div className="overflow-y-auto  h-[77%]  pt-4 px-8 overflow-x-hidden lensScroll">
         {activeTab ? TabsData[activeTab] : null}
       </div>
     </aside>

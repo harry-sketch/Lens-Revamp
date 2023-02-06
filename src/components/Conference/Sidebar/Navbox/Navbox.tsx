@@ -41,7 +41,7 @@ const Navbox = () => (
         }
         sideOffset={10}
         align="end"
-        className="w-60"
+        className="w-60 z-10"
       >
         <ProfileModal />
       </Dropdown>
