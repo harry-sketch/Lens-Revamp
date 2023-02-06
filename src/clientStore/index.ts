@@ -4,7 +4,7 @@ import { IClientState } from "./clientTypes";
 import createGroupChatSlice from "./slices/createGroupChatSlice";
 import createModal from "./slices/createModal";
 
-const useClientStore = create<IClientState>()(
+const useLensStore = create<IClientState>()(
   devtools(
     (...a) => ({
       ...createModal(...a),
@@ -16,8 +16,8 @@ const useClientStore = create<IClientState>()(
   )
 );
 
-const { getState, setState } = useClientStore;
+const { getState, setState } = useLensStore;
 
 export { getState, setState };
 
-export default useClientStore;
+export default useLensStore;

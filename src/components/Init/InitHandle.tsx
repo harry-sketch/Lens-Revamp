@@ -9,7 +9,7 @@ import BasicBtn from "../common/BasicBtn";
 
 // types
 import { IInitHandleState } from "@/types/landing.types";
-import useClientStore from "@/clientStore";
+import useLensStore from "@/clientStore";
 
 // Overlay
 import Overlay from "../common/Overlay";
@@ -20,9 +20,9 @@ const InitHandle = () => {
 
   const isSignedIn = true;
 
-  const activeModal = useClientStore((state) => state.activeModal);
+  const activeModal = useLensStore((state) => state.activeModal);
 
-  const setActiveModal = useClientStore((state) => state.setActiveModal);
+  const setActiveModal = useLensStore((state) => state.setActiveModal);
 
   const IniTHandleData: IInitHandleState[] = [
     {

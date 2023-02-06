@@ -6,7 +6,7 @@ import React, { ChangeEvent } from "react";
 import BasicIcons from "@/Assets/BasicIcons";
 
 interface Props {
-  icon: string;
+  icon?: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }

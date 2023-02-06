@@ -26,9 +26,9 @@ const BasicIcons: svgtype = {
       <path
         d="M15.75 15.75L12.4875 12.4875M14.25 8.25C14.25 11.5637 11.5637 14.25 8.25 14.25C4.93629 14.25 2.25 11.5637 2.25 8.25C2.25 4.93629 4.93629 2.25 8.25 2.25C11.5637 2.25 14.25 4.93629 14.25 8.25Z"
         stroke="#ABD396"
-        stroke-width="1.66667"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   ),
@@ -58,9 +58,9 @@ const BasicIcons: svgtype = {
         <path
           d="M3.75 11.25H3C2.60218 11.25 2.22064 11.092 1.93934 10.8107C1.65804 10.5294 1.5 10.1478 1.5 9.75V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H9.75C10.1478 1.5 10.5294 1.65804 10.8107 1.93934C11.092 2.22064 11.25 2.60218 11.25 3V3.75M8.25 6.75H15C15.8284 6.75 16.5 7.42157 16.5 8.25V15C16.5 15.8284 15.8284 16.5 15 16.5H8.25C7.42157 16.5 6.75 15.8284 6.75 15V8.25C6.75 7.42157 7.42157 6.75 8.25 6.75Z"
           stroke="#ABD396"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -134,9 +134,9 @@ const BasicIcons: svgtype = {
           <path
             d="M32.3332 14.6667L23.1665 23.8334M32.3332 14.6667L26.4998 31.3334L23.1665 23.8334M32.3332 14.6667L15.6665 20.5L23.1665 23.8334"
             stroke="#00501E"
-            stroke-width="1.67"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.67"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <rect

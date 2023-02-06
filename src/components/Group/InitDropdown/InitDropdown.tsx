@@ -1,7 +1,7 @@
-import useClientStore from "@/clientStore";
+import useLensStore from "@/clientStore";
 
 const InitDropdown = () => {
-  const setSteps = useClientStore((state) => state.setSteps);
+  const setSteps = useLensStore((state) => state.setSteps);
 
   return (
     <>

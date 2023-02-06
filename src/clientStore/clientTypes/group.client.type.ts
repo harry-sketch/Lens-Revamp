@@ -9,7 +9,18 @@ export type TStepType =
   | "leave"
   | "exit";
 
+export type TSidebarHandlesType = {
+  id: number;
+  name: string;
+  msg: string;
+  timestamp: string;
+  unreadCnt: number;
+};
+
 export interface IGroupChatstate {
   steps: TStepType;
+  handleId: number;
+  setHandleId: (handleId: number) => void;
+  sidebarHandlesArr: TSidebarHandlesType[];
   setSteps: (step: TStepType) => void;
 }

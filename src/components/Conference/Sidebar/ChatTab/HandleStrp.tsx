@@ -9,6 +9,7 @@ interface Props {
   handleName: string;
   timestamp: string;
   unreadCnt: number;
+  onClick: () => void;
 }
 
 const HandleStrp: React.FC<Props> = ({
@@ -16,8 +17,13 @@ const HandleStrp: React.FC<Props> = ({
   msg,
   timestamp,
   unreadCnt,
+  onClick,
 }) => (
-  <div className="flex items-center justify-between cursor-pointer">
+  <div
+    className="flex items-center justify-between cursor-pointer mb-4 last:mb-0"
+    onClick={onClick}
+    role="presentation"
+  >
     <div className="flex items-center gap-4">
       <Image
         src="/images/SidebarAvatar.png"
