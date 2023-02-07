@@ -18,7 +18,7 @@ const SidebarHandlesArr: TSidebarHandlesType[] = [
   {
     id: 2,
     name: "JaneDoe.lens",
-    msg: "I looked into the files you sent me, most of them are good to go and like you can send",
+    msg: "",
     timestamp: "",
     unreadCnt: 10,
   },

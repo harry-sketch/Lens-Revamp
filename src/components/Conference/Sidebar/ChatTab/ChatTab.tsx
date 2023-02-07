@@ -6,12 +6,14 @@ const ChatTab = () => {
 
   const setHandleId = useLensStore((state) => state.setHandleId);
 
-  const setIsConvoStarted = useLensStore((state) => state.setIsConvoStarted);
+  const setIsPeerSelectedForChar = useLensStore(
+    (state) => state.setIsPeerSelectedForChar
+  );
 
   // Funs
   const handleSidebarHandles = (id: number) => {
     setHandleId(id);
-    setIsConvoStarted(false);
+    setIsPeerSelectedForChar(true);
   };
 
   return (

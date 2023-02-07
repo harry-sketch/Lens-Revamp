@@ -1,15 +1,29 @@
+import React from "react";
+
 import MsgStrp from "./MsgStrp/MsgStrp";
 
-const MsgField = () => (
-  <div className="h-[88.8%] overflow-y-auto overflow-x-hidden w-full px-6 lensScroll">
-    {Array.from({ length: 200 }).map((_, i) => (
-      <MsgStrp
-        isSender={i % 2 !== 0 ? true : false}
-        name="Benedita.lens"
-        msg="Good timing — was just looking at this.cklznklzndklznldkjklz"
-      />
-    ))}
-  </div>
-);
+// Store
+import { TSidebarHandlesType } from "@/clientStore/clientTypes/group.client.type";
 
-export default MsgField;
+interface Props {
+  activeUser: TSidebarHandlesType;
+}
+
+const MsgField: React.FC<Props> = ({ activeUser }) => {
+  return (
+    <div className="h-[88.8%] overflow-y-auto overflow-x-hidden w-full px-6 lensScroll">
+      {activeUser.msg.length > 4
+        ? Array.from({ length: 200 }).map((_, i) => (
+            <MsgStrp
+              key={i}
+              isSender={i % 2 !== 0 ? true : false}
+              name="Benedita.lens"
+              msg="Good timing — was just looking at this.cklznklzndklznldkjklz"
+            />
+          ))
+        : "sed life"}
+    </div>
+  );
+};
+
+export default React.memo(MsgField);

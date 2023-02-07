@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Components
 import Header from "./Header";
@@ -12,6 +12,7 @@ import MsgField from "./MsgField/MsgField";
 // Types
 import { TConvoDataType } from "@/types/common.types";
 import useLensStore from "@/clientStore";
+import { TSidebarHandlesType } from "@/clientStore/clientTypes/group.client.type";
 
 const StartConvo = () => {
   const [convoData, setConvoData] = useState<TConvoDataType>({
@@ -20,13 +21,15 @@ const StartConvo = () => {
 
   const sidebarHandlesArr = useLensStore((state) => state.sidebarHandlesArr);
 
+  const isConvoStarted = useLensStore((state) => state.peer.isConvoStarted);
+
   const handleId = useLensStore((state) => state.handleId);
 
-  const [activeUser, setActiveUser] = useState(sidebarHandlesArr[0]);
+  const [activeUser, setActiveUser] = useState<TSidebarHandlesType>(
+    sidebarHandlesArr[0]
+  );
 
   const { userMsg } = convoData;
-
-  const isConvoStarted = useLensStore((state) => state.peer.isConvoStarted);
 
   useEffect(() => {
     setActiveUser(sidebarHandlesArr[handleId]);
@@ -36,9 +39,9 @@ const StartConvo = () => {
     <div className="w-full h-full bg-[#fff]/80 relative">
       <Header activeUser={activeUser} />
 
-      {isConvoStarted ? (
+      {isConvoStarted || activeUser.msg.length > 0 ? (
         <div className="h-[92%]">
-          <MsgField />
+          <MsgField activeUser={activeUser} />
           <MsgInput
             value={userMsg}
             onChange={(e) =>
@@ -55,4 +58,4 @@ const StartConvo = () => {
   );
 };
 
-export default StartConvo;
+export default React.memo(StartConvo);

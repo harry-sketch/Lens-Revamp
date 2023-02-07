@@ -1,8 +1,10 @@
+import React from "react";
+
 // Assets
 import BasicIcons from "@/Assets/BasicIcons";
 import useLensStore from "@/clientStore";
 import { TSidebarHandlesType } from "@/clientStore/clientTypes/group.client.type";
-import React from "react";
+
 interface Props {
   activeUser: TSidebarHandlesType;
 }

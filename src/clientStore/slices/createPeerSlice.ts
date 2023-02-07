@@ -12,6 +12,7 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
     avatarUrl: "",
     isConvoStarted: false,
   },
+  isPeerSelctedForChat: false,
 
   setAddress: (address) => {
     set(() => ({
@@ -46,6 +47,14 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
         ...get().peer,
         isConvoStarted: val,
       },
+    }));
+  },
+
+  setIsPeerSelectedForChar: (val) => {
+    const prev = get().peer;
+    set(() => ({
+      ...prev,
+      isPeerSelctedForChat: val,
     }));
   },
 });
