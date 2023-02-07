@@ -15,7 +15,6 @@ import useLensStore from "@/clientStore";
 
 const StartConvo = () => {
   const [convoData, setConvoData] = useState<TConvoDataType>({
-    isConvoStarted: false,
     userMsg: "",
   });
 
@@ -25,31 +24,31 @@ const StartConvo = () => {
 
   const [activeUser, setActiveUser] = useState(sidebarHandlesArr[0]);
 
-  const { isConvoStarted, userMsg } = convoData;
+  const { userMsg } = convoData;
 
-  //   Funcs
-  const handleClick = () =>
-    setConvoData((prev) => ({ ...prev, isConvoStarted: true }));
+  const isConvoStarted = useLensStore((state) => state.peer.isConvoStarted);
 
   useEffect(() => {
     setActiveUser(sidebarHandlesArr[handleId]);
-  }, [handleId, sidebarHandlesArr]);
+  }, [handleId]);
 
   return (
     <div className="w-full h-full bg-[#fff]/80 relative">
       <Header activeUser={activeUser} />
 
-      {/* <div className="h-[92%]">
-        <MsgField />
-        <MsgInput
-          value={userMsg}
-          onChange={(e) =>
-            setConvoData((prev) => ({ ...prev, userMsg: e.target.value }))
-          }
-        />
-      </div> */}
-
-      <ConvoMsg onClick={handleClick} />
+      {isConvoStarted ? (
+        <div className="h-[92%]">
+          <MsgField />
+          <MsgInput
+            value={userMsg}
+            onChange={(e) =>
+              setConvoData((prev) => ({ ...prev, userMsg: e.target.value }))
+            }
+          />
+        </div>
+      ) : (
+        <ConvoMsg activeUser={activeUser} />
+      )}
 
       <FooterTxt className="text-rgbColors-4 bottom-16" />
     </div>

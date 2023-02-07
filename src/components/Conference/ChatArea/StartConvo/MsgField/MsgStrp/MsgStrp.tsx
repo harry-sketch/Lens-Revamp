@@ -12,7 +12,7 @@ interface Props {
 const MsgStrp: React.FC<Props> = ({ isSender, name, msg }) => (
   <div
     className={cw(
-      "my-4 flex flex-col w-full relative",
+      "my-3 flex flex-col w-full relative",
       isSender ? "items-start" : "items-end"
     )}
   >

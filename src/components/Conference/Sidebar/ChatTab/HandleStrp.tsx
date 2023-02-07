@@ -20,7 +20,7 @@ const HandleStrp: React.FC<Props> = ({
   onClick,
 }) => (
   <div
-    className="flex items-center justify-between cursor-pointer mb-4 last:mb-0"
+    className="flex items-center justify-between cursor-pointer mb-4 last:mb-2"
     onClick={onClick}
     role="presentation"
   >

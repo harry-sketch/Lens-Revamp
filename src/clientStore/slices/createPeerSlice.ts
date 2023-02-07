@@ -10,6 +10,7 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
     handle: "",
     address: "",
     avatarUrl: "",
+    isConvoStarted: false,
   },
 
   setAddress: (address) => {
@@ -35,6 +36,15 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
       peer: {
         ...get().peer,
         handle,
+      },
+    }));
+  },
+
+  setIsConvoStarted: (val) => {
+    set(() => ({
+      peer: {
+        ...get().peer,
+        isConvoStarted: val,
       },
     }));
   },

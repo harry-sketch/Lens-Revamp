@@ -6,6 +6,14 @@ const ChatTab = () => {
 
   const setHandleId = useLensStore((state) => state.setHandleId);
 
+  const setIsConvoStarted = useLensStore((state) => state.setIsConvoStarted);
+
+  // Funs
+  const handleSidebarHandles = (id: number) => {
+    setHandleId(id);
+    setIsConvoStarted(false);
+  };
+
   return (
     <>
       {sidebarHandlesArr.map(({ id, msg, name, timestamp, unreadCnt }) => (
@@ -15,7 +23,7 @@ const ChatTab = () => {
           timestamp={timestamp}
           msg={msg}
           key={id}
-          onClick={() => setHandleId(id)}
+          onClick={() => handleSidebarHandles(id)}
         />
       ))}
     </>

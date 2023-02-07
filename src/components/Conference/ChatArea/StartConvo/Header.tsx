@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 // Assets
@@ -38,7 +39,7 @@ const Header: React.FC<Props> = ({ activeUser }) => (
       <Dropdown
         className="z-10"
         align="end"
-        trigger={<div className="mt-2">{BasicIcons.opt}</div>}
+        trigger={<div>{BasicIcons.opt}</div>}
         sideOffset={5}
       >
         <GroupMoreOpt />
@@ -47,4 +48,4 @@ const Header: React.FC<Props> = ({ activeUser }) => (
   </div>
 );
 
-export default Header;
+export default React.memo(Header);
