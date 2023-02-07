@@ -7,7 +7,9 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
   get
 ) => ({
   peer: {
+    handle: "",
     address: "",
+    avatarUrl: "",
   },
 
   setAddress: (address) => {
@@ -15,6 +17,24 @@ const createPeerSlice: StateCreator<IClientState, [], [], IPeerState> = (
       peer: {
         ...get().peer,
         address,
+      },
+    }));
+  },
+
+  setAvatarUrl: (url) => {
+    set(() => ({
+      peer: {
+        ...get().peer,
+        avatarUrl: url,
+      },
+    }));
+  },
+
+  setHandle: (handle) => {
+    set(() => ({
+      peer: {
+        ...get().peer,
+        handle,
       },
     }));
   },

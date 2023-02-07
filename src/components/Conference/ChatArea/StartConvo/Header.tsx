@@ -6,8 +6,13 @@ import BasicIcons from "@/Assets/BasicIcons";
 // Components
 import Dropdown from "@/components/common/Dropdown";
 import GroupMoreOpt from "@/components/Group/GroupMoreOpt/GroupMoreOpt";
+import { TSidebarHandlesType } from "@/clientStore/clientTypes/group.client.type";
 
-const Header = () => (
+interface Props {
+  activeUser: TSidebarHandlesType;
+}
+
+const Header: React.FC<Props> = ({ activeUser }) => (
   <div className="bg-custom-lens01 w-full h-[7.2%] flex items-center justify-between px-6 py-2.5">
     <div className="flex items-center gap-4">
       <Image
@@ -18,7 +23,7 @@ const Header = () => (
         className="object-contain"
       />
       <div className="text-base font-semibold text-custom-lens04">
-        Benedita.lens
+        {activeUser.name}
       </div>
     </div>
     <div className="flex items-center  gap-4 cursor-pointer">
@@ -33,11 +38,7 @@ const Header = () => (
       <Dropdown
         className="z-10"
         align="end"
-        trigger={
-          <button type="button" className="mt-2">
-            {BasicIcons.opt}
-          </button>
-        }
+        trigger={<div className="mt-2">{BasicIcons.opt}</div>}
         sideOffset={5}
       >
         <GroupMoreOpt />

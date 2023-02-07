@@ -48,7 +48,7 @@ const ProfileModal = () => {
       <div className="py-4">
         {ModalData.map(({ title, url }) => (
           <div
-            key={`profile-nodal-${title}`}
+            key={`profile-modal-${title}`}
             className={`font-medium text-sm cursor-pointer mb-5 last:mb-0 px-4 ${
               title === "Sign Out"
                 ? "text-red-400 border-t border-custom-lens05 pt-2"
