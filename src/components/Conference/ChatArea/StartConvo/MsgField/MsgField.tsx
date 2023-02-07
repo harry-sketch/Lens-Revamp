@@ -17,8 +17,8 @@ const MsgField: React.FC<Props> = ({ activeUser }) => {
             <MsgStrp
               key={i}
               isSender={i % 2 !== 0 ? true : false}
-              name="Benedita.lens"
-              msg="Good timing — was just looking at this.cklznklzndklznldkjklz"
+              name={activeUser.name}
+              msg={activeUser.msg}
             />
           ))
         : "sed life"}
