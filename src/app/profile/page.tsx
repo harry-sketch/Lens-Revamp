@@ -1,7 +1,14 @@
 import { NextPage } from "next";
 
-const Profile:NextPage = () => (
-    <div>Profile</div>
-)
+// Components
+import ProfileNavbar from "@/components/Profile/ProfileNavbar/ProfileNavbar";
+import ProfileDesc from "@/components/Profile/ProfileDesc/ProfileDesc";
 
-export default Profile
+const Profile: NextPage = () => (
+  <div className="bg-custom-lens03 w-full h-screen grid place-items-center">
+    <ProfileNavbar />
+    <ProfileDesc />
+  </div>
+);
+
+export default Profile;
