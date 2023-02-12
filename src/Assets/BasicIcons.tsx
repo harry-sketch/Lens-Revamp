@@ -222,6 +222,71 @@ const BasicIcons: svgtype = {
       />
     </svg>
   ),
+  keysCopy: (
+    <svg
+      width="37"
+      height="36"
+      viewBox="0 0 37 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_31322_4949)">
+        <rect
+          x="2.5"
+          y="1"
+          width="32"
+          height="32"
+          rx="8"
+          fill="#E5FFBE"
+          fill-opacity="0.5"
+        />
+        <path
+          d="M13.25 19.25H12.5C12.1022 19.25 11.7206 19.092 11.4393 18.8107C11.158 18.5294 11 18.1478 11 17.75V11C11 10.6022 11.158 10.2206 11.4393 9.93934C11.7206 9.65804 12.1022 9.5 12.5 9.5H19.25C19.6478 9.5 20.0294 9.65804 20.3107 9.93934C20.592 10.2206 20.75 10.6022 20.75 11V11.75M17.75 14.75H24.5C25.3284 14.75 26 15.4216 26 16.25V23C26 23.8284 25.3284 24.5 24.5 24.5H17.75C16.9216 24.5 16.25 23.8284 16.25 23V16.25C16.25 15.4216 16.9216 14.75 17.75 14.75Z"
+          stroke="#00501E"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <rect x="3" y="1.5" width="31" height="31" rx="7.5" stroke="#00501E" />
+      </g>
+      <defs>
+        <filter
+          id="filter0_d_31322_4949"
+          x="0.5"
+          y="0"
+          width="36"
+          height="36"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dy="1" />
+          <feGaussianBlur stdDeviation="1" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.05 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_31322_4949"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_31322_4949"
+            result="shape"
+          />
+        </filter>
+      </defs>
+    </svg>
+  ),
 };
 
 export default BasicIcons;

@@ -19,7 +19,7 @@ const ProfileNavbar = () => {
   return (
     <div
       className={cw(
-        "w-full bg-custom-lens01 h-20 absolute top-0 left-0 py-4 px-14 flex items-center justify-between"
+        "w-full bg-custom-lens01 h-14 absolute top-0 left-0 py-4 px-14 flex items-center justify-between"
       )}
     >
       <div className="flex items-center gap-6">
