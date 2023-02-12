@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 // Utils
 import { cw } from "@/utils/helpers";
 
+// Assets
+import BasicIcons from "@/Assets/BasicIcons";
+
 // Components
 import ProfileStrip from "@/components/Conference/Sidebar/Navbox/ProfileStrip/ProfileStrip";
 
@@ -36,10 +39,15 @@ const ProfileNavbar = () => {
       </div>
 
       <div className="flex items-center gap-6">
-        <div>
-          <div>Search</div>
+        <div className="bg-rgbColors-7/30 w-full flex items-center shadow-xl rounded-lg p-2 gap-2">
+          <div>{BasicIcons.search}</div>
+          <input
+            type="text"
+            className="bg-transparent w-full placeholder:text-custom-lens03 text-custom-lens03 text-sm font-normal"
+            placeholder="Search for a profile"
+          />
         </div>
-        <ProfileStrip className="gap-5">
+        <ProfileStrip className="gap-4">
           <div>sed</div>
         </ProfileStrip>
       </div>

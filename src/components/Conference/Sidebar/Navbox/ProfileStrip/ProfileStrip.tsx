@@ -38,7 +38,7 @@ const ProfileStrip: React.FC<Props> = ({ children, className }) => {
         quality={100}
         className="object-contain rounded-full"
       />
-      <span className=" text-custom-lens02 text-sm font-medium text-center">
+      <span className=" text-custom-lens02 text-sm font-semibold text-center">
         {address ? sliceAdd(address) : "harsh.lens"}
       </span>
 
