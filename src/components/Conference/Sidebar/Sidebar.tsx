@@ -51,10 +51,8 @@ const Sidebar = () => {
         <Dropdown
           align="end"
           className="bg-rgbColors-6 shadow-lg backdrop-blur-lg border border-custom-lens02 py-2.5 px-4"
-          trigger={
-            <div className="cursor-pointer  pb-1.5">{BasicIcons.add}</div>
-          }
         >
+          <div className="cursor-pointer  pb-1.5">{BasicIcons.add}</div>
           <InitDropdown />
         </Dropdown>
       </div>

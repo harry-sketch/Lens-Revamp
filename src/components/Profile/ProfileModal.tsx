@@ -1,15 +1,22 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 // Assets
 import BasicIcons from "@/Assets/BasicIcons";
+
+// Store
 import useLensStore from "@/clientStore";
-import { sliceAdd } from "@/utils/helpers";
+
+// Helpers
+import { sliceAdd, cw } from "@/utils/helpers";
 
 const ProfileModal = () => {
+  const { push } = useRouter();
+
   const address = useLensStore((state) => state.peer.address);
 
   const ModalData = [
-    { title: "View profile", url: "" },
+    { title: "View profile", url: "/profile" },
     { title: "Settings", url: "" },
     { title: "Support", url: "" },
     { title: "Sign Out", url: "" },
@@ -48,12 +55,15 @@ const ProfileModal = () => {
       <div className="py-4">
         {ModalData.map(({ title, url }) => (
           <div
+            role="presentation"
             key={`profile-modal-${title}`}
-            className={`font-medium text-sm cursor-pointer mb-5 last:mb-0 px-4 ${
+            className={cw(
+              "font-medium text-sm cursor-pointer mb-5 last:mb-0 px-4",
               title === "Sign Out"
                 ? "text-red-400 border-t border-custom-lens05 pt-2"
                 : "text-custom-lens03"
-            }`}
+            )}
+            onClick={() => push(url)}
           >
             {title}
           </div>

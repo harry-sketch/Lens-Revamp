@@ -40,14 +40,8 @@ const Navbox = () => {
         <span className=" text-custom-lens02 text-sm font-medium text-center">
           {address ? sliceAdd(address) : "somethingLong.lens"}
         </span>
-        <Dropdown
-          trigger={
-            <span className="cursor-pointer flex-1">{BasicIcons.opt}</span>
-          }
-          sideOffset={10}
-          align="end"
-          className="w-60 z-10"
-        >
+        <Dropdown sideOffset={10} align="end" className="w-60 z-10">
+          <span className="cursor-pointer flex-1">{BasicIcons.opt}</span>
           <ProfileModal />
         </Dropdown>
       </div>

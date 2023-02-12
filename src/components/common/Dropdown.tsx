@@ -5,10 +5,9 @@ import { cw } from "@/utils/helpers";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 interface Props {
-  trigger: JSX.Element;
   open?: boolean;
   onOpenChange?: () => void;
-  children: JSX.Element;
+  children: React.ReactNode;
   sideOffset?: number;
   align?: "center" | "start" | "end";
   className?: string;
@@ -18,13 +17,14 @@ const Dropdown: React.FC<Props> = ({
   children,
   onOpenChange,
   open,
-  trigger,
   sideOffset,
   align,
   className,
 }) => (
   <DropdownMenu.Root open={open} onOpenChange={onOpenChange}>
-    <DropdownMenu.Trigger>{trigger}</DropdownMenu.Trigger>
+    <DropdownMenu.Trigger asChild>
+      {React.Children.toArray(children)[0]}
+    </DropdownMenu.Trigger>
 
     <DropdownMenu.Content
       className={cw(
@@ -34,7 +34,9 @@ const Dropdown: React.FC<Props> = ({
       sideOffset={sideOffset}
       align={align}
     >
-      <DropdownMenu.Item>{children}</DropdownMenu.Item>
+      <DropdownMenu.Item>
+        {React.Children.toArray(children)[1]}
+      </DropdownMenu.Item>
     </DropdownMenu.Content>
   </DropdownMenu.Root>
 );
