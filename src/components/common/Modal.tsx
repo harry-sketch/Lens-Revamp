@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 import BasicBtn from "./BasicBtn";
-import Loading from "@/app/Lens/loading";
+import Loading from "@/app/lens/loading";
 
 interface Props {
   title: string;

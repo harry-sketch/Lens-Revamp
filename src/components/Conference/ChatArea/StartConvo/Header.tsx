@@ -36,12 +36,8 @@ const Header: React.FC<Props> = ({ activeUser }) => (
         Start Huddle
       </button>
       <button type="button">{BasicIcons.search}</button>
-      <Dropdown
-        className="z-10"
-        align="end"
-        trigger={<div>{BasicIcons.opt}</div>}
-        sideOffset={5}
-      >
+      <Dropdown className="z-10" align="end" sideOffset={5}>
+        <div>{BasicIcons.opt}</div>
         <GroupMoreOpt />
       </Dropdown>
     </div>
