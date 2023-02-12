@@ -1,7 +1,10 @@
+import React from "react";
 import Image from "next/image";
 
 // Assets
 import Avatar from "@/Assets/images/Avatar.png";
+
+// Components
 import FollowersComp from "./FollowersComp";
 
 const ProfileDescHandle = () => {
@@ -48,4 +51,4 @@ const ProfileDescHandle = () => {
   );
 };
 
-export default ProfileDescHandle;
+export default React.memo(ProfileDescHandle);
